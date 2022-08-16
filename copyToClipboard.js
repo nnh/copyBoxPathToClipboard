@@ -32,9 +32,7 @@ global.COPY_TO_CLIPBOARD.copyTextAndTitle=function(){
     navigator.clipboard.writeText(this.getUrlInfo());
 };
 global.COPY_TO_CLIPBOARD.copyToClipboard = async function(){
-    try {
-        const temp = Box.prefetchedData['/app-api/enduserapp/current-user'];
-    } catch(error) {
+    if (!(/^.*\.box\.com.*$/.test(document.URL))){
         console.log('Does not work outside Box web.');
         this.copyTextAndTitle();
         return;
@@ -43,9 +41,18 @@ global.COPY_TO_CLIPBOARD.copyToClipboard = async function(){
     if (!(/^\d+$/.test(fileId))){
         return;
     };
-    const jsonFile  = await this.confirmUrlExistence(this.createTargetFilePath(fileId));
-    const fileName = jsonFile ? jsonFile.items[0].name : null;
-    const folderId = jsonFile ? jsonFile.items[0].parentFolderID : fileId;
+    const isFolder = /folder/.test(document.URL);
+    let fileName = null;
+    let folderId = fileId;
+    if (!isFolder){
+        const jsonFile  = await this.confirmUrlExistence(this.createTargetFilePath(fileId));
+        if (!jsonFile){
+            console.log('Failed to obtain file information.');
+            return;  
+        };
+        fileName = jsonFile.items[0].name;
+        folderId = jsonFile.items[0].parentFolderID;
+    };
     const jsonFolder = await this.confirmUrlExistence(this.createTargetFolderPath(folderId));
     if (!jsonFolder){
         console.log('Failed to obtain folder information.');
