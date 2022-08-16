@@ -5,7 +5,8 @@ Web版のBoxで、エクスプローラーで開けるアドレスとURLをコ�
   - 1行目:Windows用のアドレス
   - 2行目:Mac用のアドレス（OSが最新でない場合動作しない可能性があります）
   - 3行目:URL
-- Windowsでは、エクスプローラーのアドレスバーに1行目の情報を貼り付けるとBox Driveの該当フォルダに移動します。
+- Windowsでは、エクスプローラーのアドレスバーに1行目の情報を貼り付けてEnterキーを押すとBox Driveの該当フォルダに移動します。
+![スクリーンショット 2022-08-16 13 46 04](https://user-images.githubusercontent.com/24307469/184799868-7cf18a38-1d8c-45aa-85c4-01f485498580.png)  
 - Macでは、Finderの「フォルダに移動」に２行目の情報を貼り付けるとBox Driveの該当フォルダに移動します。  
 ![スクリーンショット 2022-08-16 11 32 45](https://user-images.githubusercontent.com/24307469/184786455-3810133f-b327-41d0-82c0-8ea49f3ecba9.png)  
 ![スクリーンショット 2022-08-16 11 33 00](https://user-images.githubusercontent.com/24307469/184786936-dd3f9a91-5d9d-4732-aaf8-cdb7c8d27071.png)  
