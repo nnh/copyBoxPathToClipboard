@@ -37,7 +37,7 @@ global.COPY_TO_CLIPBOARD.copyToClipboard = async function(){
         this.copyTextAndTitle();
         return;
     };
-    const fileId = document.URL.split('/').pop();
+    const fileId = document.URL.split('/').pop().split('?')[0];
     if (!(/^\d+$/.test(fileId))){
         return;
     };
