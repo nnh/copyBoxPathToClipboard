@@ -15,8 +15,9 @@ Web版のBoxで、エクスプローラーで開けるアドレスとURLをコ�
 ![スクリーンショット 2022-08-16 11 49 12](https://user-images.githubusercontent.com/24307469/184788131-8443711e-63aa-4256-999a-86e228dc479f.png)  
 - 右上の設定から「新しいブックマークを追加」を選択します。  
 ![スクリーンショット 2022-08-16 11 53 03](https://user-images.githubusercontent.com/24307469/184788456-731685de-f8e7-4160-9c30-8855b6df3ac0.png)  
-- 「名前」には任意の名前をつけてください。
-- URLには下記の手順でコピーした値を貼り付けてください。
-  - [https://github.com/nnh/copyBoxPathToClipboard/blob/master/bookmarklet.js](https://github.com/nnh/copyBoxPathToClipboard/blob/master/bookmarklet.js)を開きます。
-  - 「Copy raw contents」をクリックしてコピーします。
-- 保存をクリックしてください。
+- ブックマーク編集画面が開きます。名前とURLを編集して保存してください。  
+  - 「名前」には任意の名前をつけてください。
+  - URLには下記の手順でコピーした値を貼り付けてください。
+    - [https://github.com/nnh/copyBoxPathToClipboard/blob/master/bookmarklet.js](https://github.com/nnh/copyBoxPathToClipboard/blob/master/bookmarklet.js)を開きます。  
+    - 画面右寄りにある 「Copy raw contents」をクリックしてコピーします。  
+     ![スクリーンショット 2022-08-16 11 56 41](https://user-images.githubusercontent.com/24307469/184788835-357f1ce8-3158-4a88-84fd-fcc773ced73a.png)  
