@@ -12,7 +12,9 @@ Web版のBoxで、エクスプローラーで開けるアドレスとURLをコ�
 - Box以外のサイトでブックマークをクリックした場合や、Box画面上で正常に動作しなかった場合はタイトルとURLがコピーされます。
 # 設定
 - Google Chrome右上の設定からブックマーク > ブックマークマネージャを開きます。
-- 右上の設定から「新しいブックマークを追加」を選択します。
+![スクリーンショット 2022-08-16 11 49 12](https://user-images.githubusercontent.com/24307469/184788131-8443711e-63aa-4256-999a-86e228dc479f.png)  
+- 右上の設定から「新しいブックマークを追加」を選択します。  
+![スクリーンショット 2022-08-16 11 53 03](https://user-images.githubusercontent.com/24307469/184788456-731685de-f8e7-4160-9c30-8855b6df3ac0.png)  
 - 「名前」には任意の名前をつけてください。
 - URLには下記の手順でコピーした値を貼り付けてください。
   - [https://github.com/nnh/copyBoxPathToClipboard/blob/master/bookmarklet.js](https://github.com/nnh/copyBoxPathToClipboard/blob/master/bookmarklet.js)を開きます。
