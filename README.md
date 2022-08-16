@@ -1,1 +1,18 @@
-# copyBoxPathToClipboard
+# 概要
+Web版のBoxで、エクスプローラーで開けるアドレスとURLをコピーします。
+# 使用方法
+- Web版のBoxを開き、作成したブックマークをクリックすると、開いている画面に対する下記の情報がコピーされます。
+  - 1行目:Windows用のアドレス
+  - 2行目:Mac用のアドレス（OSが最新でない場合動作しない可能性があります）
+  - 3行目:URL
+- Windowsでは、エクスプローラーのアドレスバーに1行目の情報を貼り付けるとBox Driveの該当フォルダに移動します。
+- Macでは、Finderの「フォルダに移動」に２行目の情報を貼り付けるとBox Driveの該当フォルダに移動します。
+- Box以外のサイトでブックマークをクリックした場合や、Box画面上で正常に動作しなかった場合はタイトルとURLがコピーされます。
+# 設定
+- Google Chrome右上の設定からブックマーク > ブックマークマネージャを開きます。
+- 右上の設定から「新しいブックマークを追加」を選択します。
+- 「名前」には任意の名前をつけてください。
+- URLには下記の手順でコピーした値を貼り付けてください。
+  - [https://github.com/nnh/copyBoxPathToClipboard/blob/master/bookmarklet.js](https://github.com/nnh/copyBoxPathToClipboard/blob/master/bookmarklet.js)を開きます。
+  - 「Copy raw contents」をクリックしてコピーします。
+- 保存をクリックしてください。
