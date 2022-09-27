@@ -8,14 +8,14 @@ global.COPY_TO_CLIPBOARD.confirmUrlExistence = function(url){
             }
             return response.json();
             }).catch(error => {
-                console.log('Fetch failed.', error)
+                console.log("Fetch failed.", error)
             });
 };
 global.COPY_TO_CLIPBOARD.createTargetFolderPath = function(targetFolderId){
-    return Box.prefetchedData['/app-api/enduserapp/current-user'].preview.appHost + 'app-api/enduserapp/folder/' + targetFolderId;
+    return Box.prefetchedData["/app-api/enduserapp/current-user"].preview.appHost + "app-api/enduserapp/folder/" + targetFolderId;
 };
 global.COPY_TO_CLIPBOARD.createTargetFilePath = function(targetFileId){
-    return Box.prefetchedData['/app-api/enduserapp/current-user'].preview.appHost + 'app-api/enduserapp/item/f_' + targetFileId + '?format=preview';
+    return Box.prefetchedData["/app-api/enduserapp/current-user"].preview.appHost + "app-api/enduserapp/item/f_" + targetFileId + "?format=preview";
 };
 global.COPY_TO_CLIPBOARD.getBoxFolderPath = function(json){
     return json.folder.path.map(i => i.name).filter((_, idx) => idx > 0);
@@ -33,11 +33,11 @@ global.COPY_TO_CLIPBOARD.copyTextAndTitle=function(){
 };
 global.COPY_TO_CLIPBOARD.copyToClipboard = async function(){
     if (!(/^.*\.box\.com.*$/.test(document.URL))){
-        console.log('Does not work outside Box web.');
+        console.log("Does not work outside Box web.");
         this.copyTextAndTitle();
         return;
     };
-    const fileId = document.URL.split('/').pop().split('?')[0];
+    const fileId = document.URL.split("/").pop().split("?")[0];
     if (!(/^\d+$/.test(fileId))){
         return;
     };
@@ -47,7 +47,7 @@ global.COPY_TO_CLIPBOARD.copyToClipboard = async function(){
     if (!isFolder){
         const jsonFile  = await this.confirmUrlExistence(this.createTargetFilePath(fileId));
         if (!jsonFile){
-            console.log('Failed to obtain file information.');
+            console.log("Failed to obtain file information.");
             return;  
         };
         fileName = jsonFile.items[0].name;
@@ -55,14 +55,14 @@ global.COPY_TO_CLIPBOARD.copyToClipboard = async function(){
     };
     const jsonFolder = await this.confirmUrlExistence(this.createTargetFolderPath(folderId));
     if (!jsonFolder){
-        console.log('Failed to obtain folder information.');
+        console.log("Failed to obtain folder information.");
         return;
     };
     const arrayFolder = this.getBoxFolderPath(jsonFolder);
-    const joinFolderName = arrayFolder.join('/');
-    const folderAndFileName = fileName !== null ? joinFolderName + '/' + fileName : joinFolderName;
-    const arrayFolders = ['%USERPROFILE%/Box/', '~/Library/CloudStorage/Box-Box/'].map(x => x + folderAndFileName + '\n');
-    const res = arrayFolders.join('') + document.URL;
+    const joinFolderName = arrayFolder.join("/");
+    const folderAndFileName = fileName !== null ? joinFolderName + "/" + fileName : joinFolderName;
+    const arrayFolders = ["%USERPROFILE%/Box/", "~/Library/CloudStorage/Box-Box/"].map(x => x + folderAndFileName + "\n");
+    const res = arrayFolders.join("") + document.URL;
     navigator.clipboard.writeText(res);
     console.log(res);
     return;
