@@ -61,8 +61,8 @@ global.COPY_TO_CLIPBOARD.copyToClipboard = async function(){
     const arrayFolder = this.getBoxFolderPath(jsonFolder);
     const joinFolderName = arrayFolder.join("/");
     const folderAndFileName = fileName !== null ? joinFolderName + "/" + fileName : joinFolderName;
-    const arrayFolders = ["%USERPROFILE%/Box/", "~/Library/CloudStorage/Box-Box/"].map(x => x + folderAndFileName + "\n");
-    const res = arrayFolders.join("") + document.URL;
+    const boxPathStr = "/Box/" + folderAndFileName + "\n";
+    const res = boxPathStr + document.URL;
     navigator.clipboard.writeText(res);
     console.log(res);
     return;
